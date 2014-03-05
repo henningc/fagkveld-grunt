@@ -14,13 +14,22 @@ var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 	'<%= pkg.author.name %> */\n';
 
 var express = require('express');
+var lrserver = require('tiny-lr')();
+var livereload = require('connect-livereload');
+
 var server = express();
 var port = 5000;
+var lrport = 35729;
+
+server.use(livereload({
+	port: lrport
+}));
 
 server.use(express.static('./app'));
 
-gulp.task('server', function() {
+gulp.task('server', ['watch'], function() {
 	server.listen(port);
+	lrserver.listen(lrport);
 });
 
 gulp.task('watch', function() {
