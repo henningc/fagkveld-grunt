@@ -14,18 +14,18 @@ var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 	'<%= pkg.author.name %> */\n';
 
 gulp.task('clean', function() {
-	gulp.src('app/dist')
+	return gulp.src('app/dist')
 		.pipe(clean());
 });
 
 gulp.task('less', function() {
-	gulp.src('app/styles/less/*.less')
+	return gulp.src('app/styles/less/*.less')
 		.pipe(less())
 		.pipe(gulp.dest('app/dist'));
 });
 
 gulp.task('cssmin', function() {
-	gulp.src(['app/dist/*.css', '!app/dist/*.min.css'])
+	return gulp.src(['app/dist/*.css', '!app/dist/*.min.css'])
 		.pipe(cssmin())
 		.pipe(header(banner, {
 			pkg: require('./package.json'),
@@ -40,13 +40,13 @@ gulp.task('cssmin', function() {
 });
 
 gulp.task('concat', function() {
-	gulp.src('app/scripts/**/*.js')
+	return gulp.src('app/scripts/**/*.js')
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('app/dist'));
 });
 
 gulp.task('uglify', function() {
-	gulp.src('app/dist/app.js')
+	return gulp.src('app/dist/app.js')
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
@@ -54,4 +54,4 @@ gulp.task('uglify', function() {
 		.pipe(gulp.dest('app/dist'));
 });
 
-gulp.task('default', ['clean']);
+gulp.task('default', ['clean', 'less', 'cssmin', 'concat', 'uglify']);
