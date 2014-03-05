@@ -1,21 +1,24 @@
 # Grunt demo
 
-This is a demo of how to setup [Grunt JS](http://gruntjs.com/) with basic funtionality such as
+This is a demo of how to setup [Gulp JS](http://gulpjs.com/) with basic funtionality such as
 
-- [JS concatination](https://github.com/gruntjs/grunt-contrib-concat)
-- [JS minificaiton](https://github.com/gruntjs/grunt-contrib-uglify)
-- [CSS minification](https://github.com/gruntjs/grunt-contrib-cssmin)
-- [Watch](https://github.com/gruntjs/grunt-contrib-watch) with [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
-- [Connect server](https://github.com/gruntjs/grunt-contrib-connect)
+- [JS concatenation](https://www.npmjs.org/package/gulp-concat)
+- [JS minificaiton](https://www.npmjs.org/package/gulp-uglify)
+- [LESS compilation](https://www.npmjs.org/package/gulp-less)
+- [CSS minification](https://www.npmjs.org/package/gulp-cssmin)
+- Watch with [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+- [Livereload server](https://www.npmjs.org/package/tiny-lr)
+- [Lr connect middleware](https://www.npmjs.org/package/connect-livereload)
+- [Web server](https://www.npmjs.org/package/express)
 
 ## Getting started
 
 To get started, you need [Node.js](http://nodejs.org/) installed.
 
-After installing Node.js, run the following commands to install [Bower](http://bower.io/) and the [Grunt command line interface](https://github.com/gruntjs/grunt-cli) globally:
+After installing Node.js, run the following commands to install [Bower](http://bower.io/) and [Gulp](https://github.com/gulpjs/gulp) globally:
 
 	npm install -g bower
-	npm install -g grunt-cli
+	npm install -g gulp
 
 
 Next, run the following commands from the root directory to download npm and bower packages:
@@ -23,16 +26,16 @@ Next, run the following commands from the root directory to download npm and bow
 	npm install
 	bower install
 
-## Grunt Tasks
+## Gulp Tasks
 
 #### Compile
 
-	grunt
+	gulp
 
 #### Watch with livereload
 
-	grunt watch
+	gulp watch
 
 #### Server with watch and livereload
 	
-	grunt server
+	gulp server

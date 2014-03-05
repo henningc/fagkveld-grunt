@@ -1,17 +1,23 @@
 {
-  "name": "grunttest",
+  "name": "gulptest",
   "version": "0.0.1-alphabeta",
-  "description": "A project that explores Grunt JS",
+  "description": "A project that explores Gulp JS",
   "author": {
-    "name": "Olav Haugen"
+    "name": "Henning Christiansen"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-less": "~0.9.0",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-connect": "~0.6.0"
+    "gulp": "^3.5.5",
+    "gulp-clean": "^0.2.4",
+    "gulp-rename": "^1.1.0",
+    "gulp-less": "^1.2.1",
+    "gulp-cssmin": "^0.1.3",
+    "gulp-concat": "^2.1.7",
+    "gulp-uglify": "^0.2.1",
+    "gulp-header": "^1.0.2",
+    "moment": "^2.5.1",
+    "tiny-lr": "0.0.5",
+    "express": "^4.0.0-rc2",
+    "connect-livereload": "^0.3.2",
+    "gulp-livereload": "^1.2.0"
   }
 }
