@@ -13,6 +13,13 @@ var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 	'* Copyright (c) <%= today("YYYY") %> ' +
 	'<%= pkg.author.name %> */\n';
 
+gulp.task('watch', function() {
+	gulp.watch('app/scripts/**/*.js', ['concat']);
+	gulp.watch('app/dist/app.js', ['uglify']);
+	gulp.watch('app/styles/less/*.less', ['less']);
+	gulp.watch(['app/dist/*.css', '!app/dist/*.min.css'], ['cssmin']);
+});
+
 gulp.task('clean', function() {
 	return gulp.src('app/dist')
 		.pipe(clean());
