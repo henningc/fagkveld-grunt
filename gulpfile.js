@@ -13,6 +13,16 @@ var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 	'* Copyright (c) <%= today("YYYY") %> ' +
 	'<%= pkg.author.name %> */\n';
 
+var express = require('express');
+var server = express();
+var port = 5000;
+
+server.use(express.static('./app'));
+
+gulp.task('server', function() {
+	server.listen(port);
+});
+
 gulp.task('watch', function() {
 	gulp.watch('app/scripts/**/*.js', ['concat']);
 	gulp.watch('app/dist/app.js', ['uglify']);
