@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 var cssmin = require('gulp-cssmin');
 var header = require('gulp-header');
 var moment = require('moment');
+var concat = require('gulp-concat');
 
 var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 	'<%= today("YYYY-MM-DD") %>\n' +
@@ -35,6 +36,12 @@ gulp.task('cssmin', function() {
 			suffix: '.min'
 		}))
 		.pipe(gulp.dest('app/dist'));
-})
+});
+
+gulp.task('concat', function() {
+	gulp.src('app/scripts/**/*.js')
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('app/dist'));
+});
 
 gulp.task('default', ['clean']);
