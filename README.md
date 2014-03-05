@@ -39,3 +39,11 @@ Next, run the following commands from the root directory to download npm and bow
 #### Server with watch and livereload
 	
 	gulp server
+
+## More info
+
+- [Build Wars](http://markdalgleish.github.io/presentation-build-wars-gulp-vs-grunt/)
+- [Beyond the numbers](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/)
+- [Getting started with Gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp/)
+- [Google](https://www.google.no/search?q=grunt+vs+gulp)
+- etc...
