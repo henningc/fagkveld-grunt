@@ -16,9 +16,10 @@ var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 var express = require('express');
 var lrserver = require('tiny-lr')();
 var livereload = require('connect-livereload');
+var refresh = require('gulp-livereload');
 
 var server = express();
-var port = 5000;
+var port = 5001;
 var lrport = 35729;
 
 server.use(livereload({
@@ -37,6 +38,12 @@ gulp.task('watch', function() {
 	gulp.watch('app/dist/app.js', ['uglify']);
 	gulp.watch('app/styles/less/*.less', ['less']);
 	gulp.watch(['app/dist/*.css', '!app/dist/*.min.css'], ['cssmin']);
+	gulp.watch('app/**/*.html', ['html']);
+});
+
+gulp.task('html', function() {
+	return gulp.src('app/**/*.html')
+		.pipe(refresh(lrserver));
 });
 
 gulp.task('clean', function() {
@@ -62,7 +69,8 @@ gulp.task('cssmin', function() {
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(gulp.dest('app/dist'));
+		.pipe(gulp.dest('app/dist'))
+		.pipe(refresh(lrserver));
 });
 
 gulp.task('concat', function() {
@@ -77,7 +85,8 @@ gulp.task('uglify', function() {
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(gulp.dest('app/dist'));
+		.pipe(gulp.dest('app/dist'))
+		.pipe(refresh(lrserver));
 });
 
 gulp.task('default', ['clean', 'less', 'cssmin', 'concat', 'uglify']);
