@@ -1,4 +1,4 @@
-# Grunt demo
+# Gulp demo
 
 This is a demo of how to setup [Gulp JS](http://gulpjs.com/) with basic funtionality such as
 
