@@ -19,7 +19,7 @@ var livereload = require('connect-livereload');
 var refresh = require('gulp-livereload');
 
 var server = express();
-var port = 5001;
+var port = 5000;
 var lrport = 35729;
 
 server.use(livereload({
