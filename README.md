@@ -11,6 +11,8 @@ This is a demo of how to setup [Gulp JS](http://gulpjs.com/) with basic funtiona
 - [Lr connect middleware](https://www.npmjs.org/package/connect-livereload)
 - [Web server](https://www.npmjs.org/package/express)
 
+Each step can be viewed by checking out the corresponding tag.
+
 ## Getting started
 
 To get started, you need [Node.js](http://nodejs.org/) installed.
