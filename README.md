@@ -1,6 +1,8 @@
 # Gulp demo
 
-This is a demo of how to setup [Gulp JS](http://gulpjs.com/) with basic funtionality such as
+This is a fork of [olavhaugen/fagkveld-grunt](https://github.com/olavhaugen/fagkveld-grunt) which recreates the grunt tasks from there in [Gulp JS](http://gulpjs.com/). The gruntfile is kept for reference.
+
+This project shows how to set up the following in gulp:
 
 - [JS concatenation](https://www.npmjs.org/package/gulp-concat)
 - [JS minificaiton](https://www.npmjs.org/package/gulp-uglify)
